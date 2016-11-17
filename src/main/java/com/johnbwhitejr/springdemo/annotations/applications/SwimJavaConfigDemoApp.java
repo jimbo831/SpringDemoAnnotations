@@ -9,13 +9,13 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  * Created by johnwhite on 11/16/16.
  */
 
-public class JavaConfigDemoApp {
+public class SwimJavaConfigDemoApp {
 
   public static void main(String[] args) {
 
     AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SportConfig.class);
 
-    Coach theCoach = context.getBean("tennisCoach", Coach.class);
+    Coach theCoach = context.getBean("swimCoach", Coach.class);
 
     System.out.println(theCoach.getDailyWorkout());
     System.out.println(theCoach.getDailyFortune());
