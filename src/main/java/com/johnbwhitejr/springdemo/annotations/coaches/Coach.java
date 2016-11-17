@@ -6,4 +6,6 @@ package com.johnbwhitejr.springdemo.annotations.coaches;
 public interface Coach {
 
     public String getDailyWorkout();
+
+    public String getDailyFortune();
 }
