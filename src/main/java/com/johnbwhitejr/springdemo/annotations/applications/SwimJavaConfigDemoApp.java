@@ -1,6 +1,6 @@
 package com.johnbwhitejr.springdemo.annotations.applications;
 
-import com.johnbwhitejr.springdemo.annotations.coaches.Coach;
+import com.johnbwhitejr.springdemo.annotations.coaches.SwimCoach;
 import com.johnbwhitejr.springdemo.annotations.config.SportConfig;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -15,10 +15,12 @@ public class SwimJavaConfigDemoApp {
 
     AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SportConfig.class);
 
-    Coach theCoach = context.getBean("swimCoach", Coach.class);
+    SwimCoach theCoach = context.getBean("swimCoach", SwimCoach.class);
 
     System.out.println(theCoach.getDailyWorkout());
     System.out.println(theCoach.getDailyFortune());
+    System.out.println("Email: " + theCoach.getEmail());
+    System.out.println("Team: " + theCoach.getTeam());
 
     context.close();
   }

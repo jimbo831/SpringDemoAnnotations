@@ -6,16 +6,21 @@ import com.johnbwhitejr.springdemo.annotations.fortunes.FortuneService;
 import com.johnbwhitejr.springdemo.annotations.fortunes.SadFortuneService;
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 /**
  * Created by u6042420 on 11/17/2016.
  */
 
 @Configuration
-//@ComponentScan("com.johnbwhitejr.springdemo.annotations")
+@PropertySource("sport.properties")
 public class SportConfig {
+
+  public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
+    return new PropertySourcesPlaceholderConfigurer();
+  }
 
   @Bean
   public FortuneService sadFortuneService() {
